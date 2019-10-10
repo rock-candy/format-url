@@ -1,0 +1,41 @@
+{
+  "name": "@rock-candy/format-url",
+  "version": "0.0.1",
+  "description": "Create formatted urls from scratch",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rock-candy/format-url.git"
+  },
+  "keywords": [
+    "format",
+    "url",
+    "not",
+    "deprecated",
+    "typescript",
+    "ts",
+    "javascript",
+    "js",
+    "xyclos",
+    "protocol",
+    "pathname",
+    "hostname",
+    "search",
+    "querystring"
+  ],
+  "author": "Jake Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rock-candy/format-url/issues"
+  },
+  "homepage": "https://github.com/rock-candy/format-url#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.12",
+    "typescript": "^3.6.4"
+  }
+}
