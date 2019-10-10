@@ -1,6 +1,6 @@
 import { stringify } from 'querystring'
 
-enum scheme {
+enum Scheme {
     HTTP = 'http',
     HTTPS = 'https',
     WS = 'ws',
@@ -11,7 +11,7 @@ enum scheme {
 }
 
 interface UrlParts {
-    protocol: scheme,
+    protocol: Scheme | string,
     host: string,
     path: string,
     query?: Record<string, string>
@@ -25,6 +25,9 @@ export default function buildUrl (
         query
     }: UrlParts
 ) {
+    if (typeof protocol === 'string' && !(protocol.toUpperCase() in Scheme)) {
+        throw new Error('Must provide a valid protocol')
+    }
     return Object.assign(new URL('http://abc.def'), {
         protocol,
         hostname,
