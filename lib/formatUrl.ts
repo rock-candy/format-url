@@ -18,20 +18,20 @@ interface UrlParts {
 }
 
 export default function buildUrl (
-    {
-        protocol,
-        host: hostname,
-        path: pathname,
-        query
-    }: UrlParts
+  {
+    protocol,
+    host: hostname,
+    path: pathname,
+    query
+  }: UrlParts
 ) {
-    if (typeof protocol === 'string' && !(protocol.toUpperCase() in Scheme)) {
-        throw new Error('Must provide a valid protocol')
-    }
-    return Object.assign(new URL('http://abc.def'), {
-        protocol,
-        hostname,
-        pathname,
-        search: stringify(query)
-    }).toString()
+  if (typeof protocol === 'string' && !(protocol.toUpperCase() in Scheme)) {
+    throw new Error('Must provide a valid protocol')
+  }
+  return Object.assign(new URL('http://abc.def'), {
+    protocol,
+    hostname,
+    pathname,
+    search: stringify(query)
+  }).toString()
 }
